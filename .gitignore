@@ -1,3 +1,5 @@
 .theia
 
 docker/hbase/binary
+rex/target
+rsvc/target
