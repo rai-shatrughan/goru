@@ -1,11 +1,11 @@
 package main
 
 import (
-	"goexp/base"
+	"gex/base"
 )
 
 func main() {
-	// baseExp()
+	baseExp()
 	base.ReadFileAtOnce()
 	base.ListDirs()
 	base.ListFilesRecursive()
