@@ -5,10 +5,7 @@ import (
 )
 
 func main() {
-	baseExp()
-	base.ReadFileAtOnce()
-	base.ListDirs()
-	base.ListFilesRecursive()
+	// baseExp()
 
 }
 
@@ -25,4 +22,9 @@ func baseExp() {
 	base.RangeOverString("hello")
 	a := []int{1, 2, 3, 4, 5}
 	base.SumOfSeries(a...)
+	base.ReadFileAtOnce()
+	base.ListDirs()
+	base.ListFilesRecursive()
+	base.BufferedReader()
+	base.BufferedWriter()
 }
