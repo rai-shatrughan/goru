@@ -1,0 +1,51 @@
+{
+  "homepage": ".",
+  "name": "ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@primer/octicons-react": "^17.5.0",
+    "@primer/react": "^35.15.0",
+    "bulma": "^0.9.4",
+    "echarts": "^5.3.2",
+    "purecss": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
+    "three": "^0.141.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "predeployme": "npm run build",
+    "deployme": "gh-pages -d build -r ssh://git@github.com/rai-shatrughan/rai-shatrughan.github.io",
+    "start": "PORT=4200 react-scripts start",
+    "build": "rm -rf build && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}

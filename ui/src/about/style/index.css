@@ -1,0 +1,149 @@
+.light {
+  --color-primary: #0060df;
+  /* light blue */
+  --color-accent: #fd6f53;
+  /* orange */
+  --background-color: #ffffff;
+  /* white */
+  --font-color: #000000;
+  /* black */
+}
+
+.dark {
+  --color-primary: #7ec5a6;
+  /* light green */
+  --color-accent: #12cdea;
+  /* sky blue */
+  --background-color: #100c2a;
+  /* black */
+  --font-color: #ffffff;
+  /* white */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--background-color);
+  color: var(--font-color);
+}
+
+/* Divide page into two */
+#div-menu {
+  /*adjust width to fit theme button */
+  width: 95vw;
+  height: 5vh;
+}
+
+.pure-menu-item .pure-menu-link {
+  color: var(--font-color);
+  background: var(--background-color);
+}
+
+.pure-menu-item:hover .pure-menu-link:hover {
+  color: var(--background-color);
+  background: var(--font-color);
+}
+
+.pure-menu li a:hover,
+.pure-menu li a:focus {
+  background: none;
+  border: none;
+  color: #AECFE5;
+}
+
+#div-center {
+  width: 100vw;
+  height: 95vh;
+}
+
+/* Home Page */
+#home {
+  width: inherit;
+  height: inherit;
+}
+
+#ecHomeBar {
+  width: inherit;
+  height: 50vh;
+}
+
+#ecHomeName {
+  width: inherit;
+  height: 25vh;
+}
+
+#ecHomeTag {
+  width: inherit;
+  height: 20vh;
+}
+
+.skillsItem {
+  width: 100vw;
+  height: 45vh;
+}
+
+#ecTechStack {
+  width: 100vw;
+  height: 95vh;
+}
+
+#ecDomains {
+  width: 100vw;
+  height: 95vh;
+}
+
+#containerVR {
+  width: 100vw;
+  height: 95vh;
+}
+
+
+.theme-button {
+  height: 1em;
+  width: 1em;
+  right: 10px;
+  top: 3px;
+  background-color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.theme-icon {
+  height: inherit;
+  width: inherit;
+}
+
+.pure-menu-horizontal {
+  display: inline-block;
+  width: 95vw;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background-color);
+  white-space: nowrap;
+  position: relative;
+}
+
+.searchVideoForm {
+  padding-top: 50px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.searchVideoTextBox {
+  background: var(--background-color);
+  color: var(--font-color);
+}
+
+.videoGrid {
+  margin-left: 25%;
+  margin-top: 25px;
+}
+
+.videoItem {
+  width: 65%;
+  height: 400;
+}
