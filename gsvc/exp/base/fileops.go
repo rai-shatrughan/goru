@@ -10,7 +10,7 @@ import (
 )
 
 func ReadFileAtOnce() {
-	f, err := os.OpenFile("res/test.csv", os.O_RDONLY, 0644)
+	f, err := os.OpenFile("exp/res/test.csv", os.O_RDONLY, 0644)
 	if err != nil {
 		fmt.Printf("error reading file - %s", err)
 	}
@@ -54,7 +54,7 @@ func ListFilesRecursive() {
 }
 
 func BufferedReader() {
-	f, err := os.OpenFile("res/test.csv", os.O_RDONLY, 0644)
+	f, err := os.OpenFile("exp/res/test.csv", os.O_RDONLY, 0644)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -73,7 +73,7 @@ func BufferedReader() {
 }
 
 func BufferedWriter() {
-	f, err := os.Create("res/testWrite.csv")
+	f, err := os.Create("exp/res/testWrite.csv")
 	if err != nil {
 		fmt.Println(err)
 	}

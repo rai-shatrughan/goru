@@ -1,12 +1,11 @@
 package main
 
 import (
-	"gex/base"
+	"gsvc/exp/base"
 )
 
 func main() {
-	// baseExp()
-
+	baseExp()
 }
 
 func baseExp() {

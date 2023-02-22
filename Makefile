@@ -1,4 +1,4 @@
-.PHONY: clean test perf bench gsvc rsvc cons
+.PHONY: clean wrk gsvc cons
 
 all: cnd down dirs appbin buildd up clean
 
@@ -29,9 +29,6 @@ appbin:
 	cp -r pkg/conf ../docker/app; \
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o ../docker/app/bin/consumer pkg/consumer/main.go; \
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o ../docker/app/bin/gsvc server/main.go
-	cd rsvc; \
-	cargo build --release ; \
-	cp target/release/rsvc ../docker/app/bin/rsvc
 
 buildd:
 	cd docker; \
@@ -52,26 +49,6 @@ clean:
 
 #docker end
 
-testv:
-	cd gsvc; \
-	go test -v test/ingest_test.go -args -host gsvc
-
-test:
-	cd gsvc; \
-	go test test/ingest_test.go -args -host gsvc
-
-bench:
-	cd gsvc/test; \
-	go test -bench=. -v
-
-perfn:
-	cd gsvc; \
-	go run test/cmd_new/perf_new.go -host gsvc
-
-perfo:
-	cd gsvc; \
-	go run test/cmd_old/perf_old.go -host gsvc
-
 wrk:
 	cd gsvc; \
 	bash test/runGowrk.sh
@@ -82,15 +59,6 @@ gsvc:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o ../docker/app/bin/gsvc server/main.go
 	docker-compose -f docker/docker-compose.yml --env-file docker/.env build gsvc 
 	docker-compose -f docker/docker-compose.yml --env-file docker/.env up -d gsvc
-	$(MAKE) clean
-
-rsvc:
-	cd rsvc; \
-	mkdir -p ../docker/app/bin/; \
-	cargo build --release; \
-	cp target/release/rsvc ../docker/app/bin/rsvc
-	docker-compose -f docker/docker-compose.yml --env-file docker/.env build rsvc 
-	docker-compose -f docker/docker-compose.yml --env-file docker/.env up -d rsvc
 	$(MAKE) clean
 
 cons:
