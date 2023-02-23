@@ -7,7 +7,11 @@ export function setTheme(themeName) {
 }
 
 export function getTheme() {
-    return localStorage.getItem('theme');
+    if (Number.isNaN(localStorage.getItem('theme'))) {
+        return "dark"
+    } else {
+        return localStorage.getItem('theme');
+    }
 }
 
 export function toggleTheme() {
@@ -33,8 +37,8 @@ export default function Theme(props) {
             }}>
 
             {props.theme === 'dark' ?
-                <SunIcon size={20} fill="#f00" /> :
-                <MoonIcon size={20} fill="#f00" />
+                <SunIcon size={20} fill="#FFFFFF" /> :
+                <MoonIcon size={20} fill="#000000" />
             }
         </button>
     );
