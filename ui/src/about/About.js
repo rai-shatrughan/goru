@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./style/index.css";
+import "bulma/css/bulma.css";
 import "purecss/build/pure-min.css"
 import "purecss/build/grids-responsive-min.css";
 import {
     Header,
-    Theme,
-    getTheme,
     CompMap
 } from "./comp/CompList";
 
@@ -21,21 +20,10 @@ export default function About() {
 
     return (
         <div>
-            <div id="div-menu">
-                <Header
-                    onClicked={headerClicked}
-                />
-
-                <Theme
-                    theme={theme}
-                    onClicked={() =>
-                        setTheme(getTheme())
-                    }
-                />
-            </div>
+            <Header onClicked={headerClicked} />
 
             <div id="div-center">
-                <VisibleComponent theme={theme} />
+                <VisibleComponent />
             </div>
         </div>
     );

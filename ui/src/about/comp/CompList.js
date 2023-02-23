@@ -1,7 +1,6 @@
-export { default as Header } from "../menu/header";
+export { default as Header } from "./Header";
 export { default as Home } from "./Home";
 
-// me
 export { default as Skills } from "./Skills";
 export { default as TechStack } from "./TechStack";
 export { default as Domains } from "./Domains";
