@@ -7,19 +7,11 @@ export function setTheme(themeName) {
 }
 
 export function getTheme() {
-    if (Number.isNaN(localStorage.getItem('theme'))) {
-        return "dark"
-    } else {
-        return localStorage.getItem('theme');
-    }
+    return localStorage.getItem("theme") === null ? "dark" : localStorage.getItem("theme");
 }
 
 export function toggleTheme() {
-    if (getTheme() === 'dark') {
-        setTheme('light');
-    } else {
-        setTheme('dark');
-    }
+    (getTheme() === 'dark') ? setTheme('light') : setTheme('dark');
 }
 
 export default function Theme(props) {
