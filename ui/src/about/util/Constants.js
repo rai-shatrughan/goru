@@ -2,7 +2,8 @@ import {
     Home,
     Skills,
     TechStack,
-    Domains
+    Domains,
+    VR
 } from "../comp/CompList";
 
 // export const Menus = ["Home", "Skills", "TechStack", "Domains", "VR", "Video", "Login"];
