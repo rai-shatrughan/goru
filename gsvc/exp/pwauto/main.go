@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/playwright-community/playwright-go"
 )
@@ -53,6 +54,7 @@ func cnn() {
 	if _, err = page.Goto("https://edition.cnn.com/"); err != nil {
 		log.Fatalf("could not goto: %v", err)
 	}
+	time.Sleep(60 * time.Second)
 	entries, err := page.QuerySelectorAll("xpath=//a/span")
 	if err != nil {
 		log.Fatalf("could not get entries: %v", err)
@@ -71,6 +73,7 @@ func gnews() {
 	if _, err := page.Goto("https://news.google.co.in"); err != nil {
 		log.Fatalf("could not goto: %v", err)
 	}
+	time.Sleep(30 * time.Second)
 	entries, err := page.QuerySelectorAll("xpath=//article//a")
 	if err != nil {
 		log.Fatalf("could not get entries: %v", err)
